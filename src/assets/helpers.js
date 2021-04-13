@@ -40,3 +40,8 @@ export const getCategoryById = id => {
             return 'curiosities';
     }
 }
+
+export const transformDateTime = (datetime) => {
+    const timeUTC = Date.parse(datetime) + 1000 * 60 * 60 * 4;
+    return new Date(timeUTC).toLocaleString().replace(',', '');
+}

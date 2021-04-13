@@ -22,7 +22,10 @@ const IndexContainer = ({getMainNews, getByCategory, news}) => {
 const mapStateToProps = (state) => {
     return {
         news: {
-            main: state.indexReducer.main
+            main: state.indexReducer.main,
+            read: state.indexReducer.read,
+            popular: state.indexReducer.popular,
+            discussed: state.indexReducer.discussed
         }
     }
 };
