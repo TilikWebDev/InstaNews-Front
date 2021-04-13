@@ -1,0 +1,30 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+
+    &.main {
+        max-width: 450px;
+        min-height: 350px;
+        padding-top: 60px;
+
+        .title {
+            font-size: 30px;
+            color: #ffffff;
+            padding: 30px 30px 15px 30px;
+            background-color: rgba(0, 0, 0, 0.65);
+            line-height: 36px;
+        }
+
+        .text {
+            color: #c5c5c5;
+            padding: 0 30px 30px 30px;
+            background-color: rgba(0, 0, 0, 0.65);
+            line-height: 20px;
+        }
+    }
+}

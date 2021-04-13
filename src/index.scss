@@ -1,0 +1,33 @@
+* {
+  outline: none;
+  font-size: 15px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+  align-content: flex-start;
+}
+
+html {
+  display: flex;
+  min-height: 100%;
+
+  body {
+    margin: 0;
+    flex: 1;
+
+    .container {
+      width: calc(100% - 30px);
+      margin: 0 auto;
+      max-width: 1200px;
+
+      @media (max-width: 1230px) {
+        width: 100%;
+      }
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

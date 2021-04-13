@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import 'react-notifications/lib/notifications.css';
 
-function App() {
+import { Provider, connect } from 'react-redux';
+import { Route, withRouter, Switch, BrowserRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { NotificationContainer } from 'react-notifications';
+
+import store from './redux/redux-store';
+
+import HeaderContainer from './components/header/header-container';
+import IndexContainer from './components/index/index-container';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrapper" className={'container'}>
+      <HeaderContainer/>
+
+      <Switch>
+        <Route exact path={'/'} render={() => <IndexContainer/>}/>
+      </Switch>
+
+      <NotificationContainer/>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+      
+  }
+}
+
+const AppContainer = compose(
+  withRouter,
+  connect(mapStateToProps, {  })
+)(App);
+
+const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer/>
+      </Provider>
+    </BrowserRouter>
+  )
+}
+
+export default AppRouter;

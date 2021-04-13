@@ -1,0 +1,25 @@
+@import '../../color.scss';
+
+header {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #ebebeb;
+    position: relative;
+    padding-top: 30px;
+
+    .logo {
+        font-size: 42px;
+        display: block;
+        margin: 15px auto;
+        font-weight: bold;
+        color: $main_color;
+        line-height: 34px;
+
+        span {
+            font-size: 42px;
+            color: black;
+        }
+    }
+}

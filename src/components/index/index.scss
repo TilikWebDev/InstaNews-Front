@@ -1,0 +1,11 @@
+.main_content {
+    flex: 1;
+    margin: 30px auto;
+
+    .row {
+        &.main {
+            margin-bottom: 30px;
+            justify-content: space-between;
+        }
+    }
+}
