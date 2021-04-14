@@ -14,9 +14,9 @@ const NewsList = ({data = [], datetime, title, link}) => {
             }
 
             {
-                data.length &&
+                data?.length &&
                     data.map((n, i) => 
-                        <div key={i} className={'news_row'}>
+                        <div key={i} className={'list_news'}>
                             <NavLink to={`/news?id=${n.ID}`} className={'title'}>
                                 { n.TITLE }
                             </NavLink>

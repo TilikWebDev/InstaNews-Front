@@ -1,3 +1,5 @@
+@import '../../color.scss';
+
 .news {
     display: flex;
     flex-direction: column;
@@ -7,24 +9,44 @@
     background-position: center;
     position: relative;
 
-    &.main {
+    .title {
+        font-size: 30px;
+        color: #ffffff;
+        padding: 30px 30px 15px 30px;
+        background-color: rgba(0, 0, 0, 0.65);
+        line-height: 36px;
+    }
+
+    .text {
+        color: #c5c5c5;
+        padding: 0 30px 30px 30px;
+        background-color: rgba(0, 0, 0, 0.65);
+        line-height: 20px;
+    }
+
+    &.__main {
         max-width: 450px;
         min-height: 350px;
         padding-top: 60px;
+    }
 
-        .title {
-            font-size: 30px;
-            color: #ffffff;
-            padding: 30px 30px 15px 30px;
-            background-color: rgba(0, 0, 0, 0.65);
-            line-height: 36px;
-        }
+    &.__row {
+        width: calc(25% - 90px / 4);
+        margin-bottom: 30px;
+        min-height: 200px;
+        max-width: 100%;
 
         .text {
-            color: #c5c5c5;
-            padding: 0 30px 30px 30px;
-            background-color: rgba(0, 0, 0, 0.65);
+            padding: 15px;
+            font-size: 15px;
             line-height: 20px;
+        }
+
+        &:hover {
+            .text {
+                background-color: $main_color;
+                color: #fff;
+            }
         }
     }
 }

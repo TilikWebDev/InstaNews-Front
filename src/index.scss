@@ -28,6 +28,10 @@ html {
     .row {
       display: flex;
       flex-wrap: wrap;
+
+      &.sb {
+        justify-content: space-between;
+      }
     }
   }
 }

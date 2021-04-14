@@ -8,13 +8,19 @@ const News = ({type, data}) => {
         backgroundImage: `url(https://instanews.com.ua/${data.IMG})`,
     }
 
-    return <NavLink to={`/news?id=${data.ID}`} className={`news ${type}`} style={style}>
-        <div className="title">
-            {data.TITLE}
-        </div>
+    return <NavLink to={`/news?id=${data.ID}`} className={`news __${type}`} style={style}>
+        
+        {
+            (type !== 'row') &&
+                <div className="title">
+                    {data.TITLE}
+                </div>
+        }
 
         <div className="text">
-            {data.TEXT}
+            {
+                data.TEXT?.length > 150 ? `${data.TEXT.substr(0, 147)}...` : data.TEXT
+            }
         </div>
     </NavLink>;
 }
