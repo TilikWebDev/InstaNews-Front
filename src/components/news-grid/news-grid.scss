@@ -1,0 +1,33 @@
+@import '../../color.scss';
+
+.news_grid {
+    .news_grid__body {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+        justify-content: space-between;
+
+        .news_grid__cld {
+            font-size: 15px;
+            color: #333;
+            margin: 0 15px;
+            margin-bottom: 30px;
+            width: calc(100% / 6 - 30px);
+
+            .img {
+                min-height: 120px;
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 10px;
+            }
+
+            &:hover {
+                color: $main_color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    margin-bottom: 30px;
+}

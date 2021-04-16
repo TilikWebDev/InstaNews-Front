@@ -20,8 +20,8 @@ export const newsAPI = {
         });
     },
 
-    getByCategory (name) {
-        return instance.get(`news/category/${name}`).then(response => {
+    getByCategory (name, qty) {
+        return instance.get(`news/category/${name}?qty=${qty}`).then(response => {
             return response.data;
         });
     },

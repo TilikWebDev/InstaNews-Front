@@ -12,6 +12,10 @@ const IndexContainer = ({getMainNews, getByCategory, news}) => {
         getByCategory('popular');
         getByCategory('discussed');
 
+        getByCategory('polytics');
+        getByCategory('economics');
+        getByCategory('society');
+        getByCategory('kiev', 12);
     }, [getMainNews])
 
     return (
@@ -25,7 +29,11 @@ const mapStateToProps = (state) => {
             main: state.indexReducer.main,
             read: state.indexReducer.read,
             popular: state.indexReducer.popular,
-            discussed: state.indexReducer.discussed
+            discussed: state.indexReducer.discussed,
+            polytics: state.indexReducer.polytics,
+            economics: state.indexReducer.economics,
+            society: state.indexReducer.society,
+            kiev: state.indexReducer.kiev,
         }
     }
 };

@@ -1,5 +1,11 @@
-.list {
-    .list_news {
+@import '../../color.scss';
+
+.news_list__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+    .news_list__cld {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -9,6 +15,11 @@
             text-decoration: none;
             line-height: 20px;
             color: #000;
+
+            &:hover {
+                color: $main_color;
+                text-decoration: underline;
+            }
         }
 
         .date {
@@ -17,10 +28,23 @@
             margin-top: 9px;
         }
 
-        &:not(:nth-child(2)) {
+        &:not(:first-child) {
             margin-top: 10px;
             border-top: 1px dotted #ccc;
             padding-top: 10px;
+        }
+    }
+
+    .last_link {
+        margin-left: auto;
+        margin-top: auto;
+        line-height: 20px;
+        padding-top: 20px;
+        font-size: 13px;
+        color: cornflowerblue;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

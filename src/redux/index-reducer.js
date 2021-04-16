@@ -33,9 +33,9 @@ export const setByCategoryNews = (payload) => {
     }
 }
 
-export const getByCategory = (name) => {
+export const getByCategory = (name, qty = 7) => {
     return async (dispatch) => {
-        const {data, status, message} = await newsAPI.getByCategory(name);
+        const {data, status, message} = await newsAPI.getByCategory(name, qty);
         if (status) {
             dispatch(setByCategoryNews({
                 data: [

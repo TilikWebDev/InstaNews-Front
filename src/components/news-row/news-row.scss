@@ -1,0 +1,36 @@
+@import '../../color.scss';
+
+.news_row {
+    .news_row__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .news_row__cld {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-top: 60px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+            width: calc(25% - 90px / 4);
+            margin-bottom: 30px;
+            min-height: 200px;
+            max-width: 100%;
+
+            .text {
+                padding: 15px;
+                font-size: 15px;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                line-height: 20px;
+
+                &:hover {
+                    background-color: $main_color;
+                }
+            }
+        }
+    }
+}
