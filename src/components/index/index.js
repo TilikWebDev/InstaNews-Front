@@ -6,10 +6,11 @@ import NewsList from '../news-list/news-list';
 import NewsRow from '../news-row/news-row';
 import NewsCategory from '../news-category/news-category';
 import NewsGrid from '../news-grid/news-grid';
+import NewsColumns from '../news-columns/news-columns';
 
 const Index = ({news}) => {
     return (
-        <div className={'main_content'}>
+        <div className={'main_content container'}>
             <div className={'row main'}>
                 <NewsMain data={news.main}/>
 
@@ -24,6 +25,7 @@ const Index = ({news}) => {
             <NewsCategory name={'Общество'} link={'society'} color={'#2dcc70'} data={news.society}/>
 
             <NewsGrid name={'Киевские новости'} link={'kiev'} color={'#ffc362'} data={news.kiev}/>
+            <NewsColumns data={news.sss}/>
         </div>
     )
 }

@@ -7,11 +7,13 @@ import NavBar from './nav-bar/nav-bar';
 const Header = () => {
     return (
         <header>
-            <MarqueeContainer/>
-            <NavLink to={'/'} className={'logo'}>
-                <span>INSTA</span> NEWS
-            </NavLink>
-            <NavBar/>
+            <div className={'container'}>
+                <MarqueeContainer/>
+                <NavLink to={'/'} className={'logo'}>
+                    <span>INSTA</span> NEWS
+                </NavLink>
+                <NavBar/>
+            </div>
         </header>
     )
 }

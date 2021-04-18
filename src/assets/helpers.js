@@ -38,7 +38,40 @@ export const getCategoryById = id => {
 
         case 13:
             return 'curiosities';
+
+        default:
+            return;
     }
+}
+
+export const geAllCategoryObject = () => {
+    return (
+        [
+            { name: 'Поиск', link: 'search' },
+            { name: 'Читаемые', link: 'read' },
+            { name: 'Популярные', link: 'popular' },
+            { name: 'Обсуждаемые', link: 'discussed' },
+            { name: 'Политика', link: 'polytics' },
+            { name: 'Экономика', link: 'economics' },
+            { name: 'Проишествия', link: 'actions' },
+            { name: 'Общество', link: 'society' },
+            { name: 'Киевские новости', link: 'kiev' },
+            { name: 'Технологии', link: 'technologies' },
+            { name: 'Наука', link: 'science' },
+            { name: 'Авто', link: 'auto' },
+            { name: 'Спорт', link: 'sport' },
+            { name: 'Здоровье', link: 'health' },
+            { name: 'Шоу-бизнес', link: 'showbusiness' },
+            { name: 'За рубежом', link: 'abroad' },
+            { name: 'Курьезы', link: 'curiosities' }
+        ]
+    );
+}
+
+export const convertCategoryToValidate = (name) => {
+    const allCtg = geAllCategoryObject().filter((c) => c.link === name);
+
+    return allCtg.length ? allCtg[0] : { name: 'Читаемые', link: 'read' };
 }
 
 export const transformDateTime = (datetime) => {

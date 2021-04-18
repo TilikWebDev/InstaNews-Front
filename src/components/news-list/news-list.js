@@ -9,12 +9,10 @@ const NewsList = ({data, datetime, title, link}) => {
     return (
         <div className={'news_list'}>
             {
-                title ?
+                title &&
                     <h1 className={'default_title'}>
                         {title}
                     </h1>
-                    :
-                    <div></div>
             }
 
             <div className={'news_list__body'}>
@@ -39,8 +37,8 @@ const NewsList = ({data, datetime, title, link}) => {
                 }
 
                 {
-                    link &&
-                        <NavLink to={`/category?name=${link}`} className={'last_link'}>
+                    link && data &&
+                        <NavLink to={`/category/${link}`} className={'last_link'}>
                             Читать еще...
                         </NavLink>  
                 }

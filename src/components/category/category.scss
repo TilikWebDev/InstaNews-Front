@@ -1,0 +1,104 @@
+@import '../../color.scss';
+
+.category_news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .category__title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .category_news__body {
+        margin-right: 30px;
+        flex: 1;
+
+        .category_news__cld {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: flex-start;
+            border-bottom: 1px solid #ededed;
+
+            &:nth-child(odd) {
+                background-color: #fcfcff;
+            }
+
+            &:first-child {
+                border-top: 1px solid #ededed;
+            }
+
+            .img {
+                width: 140px;
+                min-width: 140px;
+                height: 120px;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+                min-height: 0;
+                padding: 0;
+
+                .date {
+                    line-height: 30px;
+                    font-size: 11px;
+                    color: rgba(255, 255, 255, 0.8);
+                    background-color: rgba(0, 0, 0, 0.7);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    cursor: default;
+                    display: flex;
+                    white-space: nowrap;
+                    align-items: center;
+                    justify-content: center;
+
+                    i {
+                        color: rgba(255, 255, 255, 0.8);
+                        margin-right: 5px;
+                    }
+                }
+            }
+
+            .info {
+                width: calc(100% - 160px);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                .title {
+                    line-height: 20px;
+                    font-size: 16px;
+                    color: black;
+                    margin: 0;
+                    font-weight: 400;
+
+                    &:hover {
+                        color: $main_color;
+                    }
+                }
+
+                .text {
+                    color: #555;
+                    font-size: 13px;
+                    margin: 10px 0 0 0;
+                    pointer-events: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .category_news__bar {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        width: 370px;
+    }
+}

@@ -29,6 +29,13 @@ const NewsGrid = ({name, link, color, data}) => {
                         :
                         <Preloader margin={'0 15px'}/>
                 }
+
+                {
+                    data &&
+                        <NavLink to={`/category/${link}`} className={'last_link'}>
+                            Читать еще...
+                        </NavLink>
+                }
             </div>
         </div>
     )

@@ -17,11 +17,15 @@ export const setMainNews = (payload) => {
 
 export const getMainNews = () => {
     return async (dispatch) => {
-        const {data, status, message} = await newsAPI.getMain();
-        if (status) {
-            dispatch(setMainNews(data));
-        } else {
-            NotificationManager.error(message[0]);
+        try {
+            const {data, status, message} = await newsAPI.getMain();
+            if (status) {
+                dispatch(setMainNews(data));
+            } else {
+                NotificationManager.error(message[0]);
+            }
+        } catch (err) {
+            NotificationManager.error(err.message);
         }
     }       
 }
@@ -33,18 +37,83 @@ export const setByCategoryNews = (payload) => {
     }
 }
 
-export const getByCategory = (name, qty = 7) => {
+
+export const getNewsRead = (range = 7, qty = 5, page = 1) => {
     return async (dispatch) => {
-        const {data, status, message} = await newsAPI.getByCategory(name, qty);
-        if (status) {
-            dispatch(setByCategoryNews({
-                data: [
-                    ...data
-                ],
-                category: name
-            }));
-        } else {
-            NotificationManager.error(message[0]);
+        try {
+            const {data, status, message} = await newsAPI.getNewsRead(range, qty, page);
+            if (status) {
+                dispatch(setByCategoryNews({
+                    data: [
+                        ...data.news
+                    ],
+                    category: 'read'
+                }));
+            } else {
+                NotificationManager.error(message[0]);
+            }
+        } catch (err) {
+            NotificationManager.error(err.message);
+        }
+    } 
+}
+
+export const getNewsPopular = (range = 7, qty = 5, page = 1) => {
+    return async (dispatch) => {
+        try {
+            const {data, status, message} = await newsAPI.getNewsPopular(range, qty, page);
+            if (status) {
+                dispatch(setByCategoryNews({
+                    data: [
+                        ...data.news
+                    ],
+                    category: 'popular'
+                }));
+            } else {
+                NotificationManager.error(message[0]);
+            }
+        } catch (err) {
+            NotificationManager.error(err.message);
+        }
+    } 
+}
+
+export const getNewsDiscussed = (range = 7, qty = 4, page = 1) => {
+    return async (dispatch) => {
+        try {
+            const {data, status, message} = await newsAPI.getNewsDiscussed(range, qty, page);
+            if (status) {
+                dispatch(setByCategoryNews({
+                    data: [
+                        ...data.news
+                    ],
+                    category: 'discussed'
+                }));
+            } else {
+                NotificationManager.error(message[0]);
+            }
+        } catch (err) {
+            NotificationManager.error(err.message);
+        }
+    } 
+}
+
+export const getByCategory = (name, qty = 7, page = 1) => {
+    return async (dispatch) => {
+        try {
+            const {data, status, message} = await newsAPI.getByCategory(name, qty, page);
+            if (status) {
+                dispatch(setByCategoryNews({
+                    data: [
+                        ...data.news
+                    ],
+                    category: name
+                }));
+            } else {
+                NotificationManager.error(message[0]);
+            }
+        } catch (err) {
+            NotificationManager.error(err.message);
         }
     } 
 }

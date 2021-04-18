@@ -20,8 +20,26 @@ export const newsAPI = {
         });
     },
 
-    getByCategory (name, qty) {
-        return instance.get(`news/category/${name}?qty=${qty}`).then(response => {
+    getNewsRead (range, qty, page) {
+        return instance.get(`news/category/read?range=${range}&qty=${qty}&page=${page}`).then(response => {
+            return response.data;
+        });
+    },
+
+    getNewsPopular (range, qty, page) {
+        return instance.get(`news/category/popular?range=${range}&qty=${qty}&page=${page}`).then(response => {
+            return response.data;
+        });
+    },
+
+    getNewsDiscussed (range, qty, page) {
+        return instance.get(`news/category/discussed?range=${range}&qty=${qty}&page=${page}`).then(response => {
+            return response.data;
+        });
+    },
+
+    getByCategory (name, qty, page) {
+        return instance.get(`news/category/name/${name}?qty=${qty}&page=${page}`).then(response => {
             return response.data;
         });
     },

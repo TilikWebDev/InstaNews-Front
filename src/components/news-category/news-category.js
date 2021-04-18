@@ -31,7 +31,7 @@ const News = ({data, category, category_link}) => {
                 <span>
                     <i className={'fa fa-bookmark-o'} aria-hidden={true}></i>
 
-                    <NavLink to={`/category?name=${category_link}`} className={'category'}>
+                    <NavLink to={`/category/${category_link}`} className={'category'}>
                         { category }
                     </NavLink>
                 </span>

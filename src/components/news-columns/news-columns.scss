@@ -1,0 +1,15 @@
+.news_columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .news_columns__cld {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% / 3 - 20px);
+
+        .news_list {
+            flex: 1;
+        }
+    }
+}

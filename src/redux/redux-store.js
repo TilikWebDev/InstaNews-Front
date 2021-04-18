@@ -3,10 +3,12 @@ import thunkMiddleWare from 'redux-thunk';
 
 import headerReducer from './header-reducer';
 import indexReducer from './index-reducer';
+import categoryReducer from './category-reducer';
 
 const reducers = combineReducers({
     headerReducer,
     indexReducer,
+    categoryReducer,
 });
 
 const store = createStore(reducers,

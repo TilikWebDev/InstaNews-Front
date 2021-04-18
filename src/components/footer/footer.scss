@@ -1,0 +1,60 @@
+@import '../../color.scss';
+
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 30px 0 0 0;
+
+    .logotype {
+        margin: 0;
+        font-size: 28px;
+        display: flex;
+
+        .logotype_color {
+            font-size: 28px;
+            color: $main_color;
+            margin: 0 0 0 2px;
+        }
+    }
+
+    .map {
+        margin: 0 -10px 30px -10px;
+        width: calc(100% + 20px);
+        padding: 30px 0 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #292929;
+
+        .map__cld {
+            color: #aaa;
+            margin: 0 10px 15px 10px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .text {
+        line-height: 25px;
+        color: #605f5f;
+        text-align: justify;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .copyright {
+        line-height: 30px;
+        background-color: rgba(0, 0, 0, 0.15);
+        margin-top: 30px;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            opacity: 0.4;
+            font-size: 12px;
+
+            .developer {
+                font-size: 12px;
+            }
+        }
+    }
+}

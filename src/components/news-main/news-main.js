@@ -22,7 +22,9 @@ const NewsMain = ({data}) => {
             </div>
         </NavLink>
         :
-        <Preloader margin={'0 0 30px 0'}/>
+        <div className={`news_main wpm`}>
+            <Preloader margin={'0 0 30px 0'}/>
+        </div>
 }
 
 export default React.memo(NewsMain);

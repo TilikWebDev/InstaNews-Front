@@ -27,6 +27,18 @@
                 text-decoration: underline;
             }
         }
+
+        .last_link {
+            padding-top: 20px;
+            margin: auto 15px 0 auto;
+            line-height: 20px;
+            font-size: 13px;
+            color: cornflowerblue;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     margin-bottom: 30px;
